@@ -3,4 +3,64 @@
 }
 body {
   font-family: 'Victor Mono', sans-serif;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: #eee;
+}
+.app {
+  display: flex;
+  height: 100%;
+}
+article {
+  flex: 1;
+  overflow-y: scroll;
+  height: 100vh;
+  height: 100dvh;
+  h2 {
+    background-color: #444;
+    color: #eee;
+    padding: 1rem;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #555;
+    text-wrap: balance;
+  }
+}
+.splitter {
+  width: 1rem;
+  background: #aaa;
+  cursor: col-resize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  font-size: 0.5rem;
+}
+svg {
+  margin-right: 1rem;
+  height: 1rem;
+  display: inline;
+  path {
+    fill: #0090de;
+  }
+}
+article.markdown {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: start;
+  h2 {
+    width: 100%;
+  }
+  textarea {
+    width: 100%;
+    outline: none;
+    min-height: calc(100% - 7rem);
+    resize: none;
+    padding: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+  }
 }
