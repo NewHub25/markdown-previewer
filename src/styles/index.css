@@ -12,7 +12,7 @@ body {
   display: flex;
   height: 100%;
 }
-article {
+article:is(.previewer, .markdown) {
   flex: 1;
   overflow-y: scroll;
   height: 100vh;

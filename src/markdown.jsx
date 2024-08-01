@@ -1,11 +1,10 @@
-import { useState } from 'react';
 import IconMark from './icons/icon-mark';
 
-function Markdown() {
-  const [markdown, setMarkdown] = useState('');
+// eslint-disable-next-line
+function Markdown({ raw, setRaw }) {
   return (
     <article className="markdown">
-      <h2>
+      <h2 className='markdown_h2'>
         <span>
           <IconMark />
           Write here your markdown to transform
@@ -15,8 +14,8 @@ function Markdown() {
         className="markdown_textarea"
         placeholder="Write here"
         id="editor"
-        value={markdown}
-        onChange={(e) => setMarkdown(e.target.value)}
+        value={raw}
+        onChange={(e) => setRaw(e.target.value)}
       ></textarea>
     </article>
   );
