@@ -15,7 +15,7 @@ function Markdown({ raw, setRaw }) {
         placeholder="Write here"
         id="editor"
         value={raw}
-        onChange={(e) => setRaw(e.target.value)}
+        onChange={(e) => setRaw(e.currentTarget.value)}
       ></textarea>
     </article>
   );

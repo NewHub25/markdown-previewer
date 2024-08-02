@@ -7,7 +7,11 @@ import { marked } from 'marked';
 import textLoaded from './assets/first-load.json';
 
 function App() {
+  marked.use({
+    breaks: true,
+  });
   const [raw, setRaw] = useState(textLoaded.text);
+  // console.log(raw);
 
   return (
     <main className="app">
