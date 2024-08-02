@@ -7,22 +7,29 @@ function Splitter({ markdownRef, previewerRef }) {
   const splitterRef = useRef(null);
 
   useEffect(() => {
-    splitterRef.current.addEventListener('mousedown', function () {
-      console.log(123);
+    const mouseDownFallback = () => {
       isResizing = true;
-    });
-    document.addEventListener('mousemove', function (e) {
+    };
+    const mouseUpFallback = () => {
+      isResizing = false;
+    };
+    const mouseMoveFallback = function (e) {
       if (!isResizing) return;
       const offsetRight = document.body.offsetWidth - (e.clientX - document.body.offsetLeft);
       markdownRef.current.style.flexBasis = `calc(100% - ${
         offsetRight + splitterRef.current.offsetWidth
       }px)`;
       previewerRef.current.style.flexBasis = `${offsetRight}px`;
-    });
+    };
+    splitterRef.current.addEventListener('mousedown', mouseDownFallback);
+    document.addEventListener('mousemove', mouseMoveFallback);
+    document.addEventListener('mouseup', mouseUpFallback);
 
-    document.addEventListener('mouseup', function () {
-      isResizing = false;
-    });
+    return () => {
+      splitterRef.current.removeEventListener('mousedown', mouseDownFallback);
+      document.removeEventListener('mousemove', mouseMoveFallback);
+      document.removeEventListener('mouseup', mouseUpFallback);
+    };
   }, [markdownRef, previewerRef]);
 
   return (

@@ -27,6 +27,7 @@ article:is(.markdown, .previewer) {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     border-bottom: 1px solid #555;
     text-wrap: balance;
   }
@@ -62,7 +63,6 @@ article.markdown {
   justify-content: start;
   h2 {
     width: 100%;
-    text-align: center;
   }
   textarea {
     width: 100%;
