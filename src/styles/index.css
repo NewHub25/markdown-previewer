@@ -14,9 +14,8 @@ body {
   display: flex;
   height: 100%;
 }
-article:is(.previewer, .markdown) {
+article:is(.markdown, .previewer) {
   flex: 1;
-  overflow-y: scroll;
   height: 100vh;
   height: 100dvh;
   h2:is(.previewer_h2, .markdown_h2) {
@@ -32,15 +31,21 @@ article:is(.previewer, .markdown) {
     text-wrap: balance;
   }
 }
+article.previewer {
+  overflow-y: scroll;
+}
 .splitter {
-  width: 1rem;
-  background: #aaa;
+  width: .7rem;
+  background-color:  #2bdea2;
   cursor: col-resize;
   display: flex;
   justify-content: center;
   align-items: center;
   user-select: none;
-  font-size: 0.5rem;
+  font-size: 0.7rem;
+  &:active{
+    background-color: #49ae8d;
+  }
 }
 svg {
   margin-right: 1rem !important;

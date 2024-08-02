@@ -1,11 +1,10 @@
 import IconPrint from './icons/icon-print';
 
 // eslint-disable-next-line
-function Previewer({ html }) {
-  console.log(html)
+function Previewer({ html, myref }) {
   return (
-    <article className="previewer">
-      <h2 className='previewer_h2'>
+    <article ref={myref} className="previewer">
+      <h2 className="previewer_h2">
         <span>
           <IconPrint />
           Here it is printed your markdown
