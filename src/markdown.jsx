@@ -10,13 +10,15 @@ function Markdown({ raw, setRaw, myref }) {
           Write here your markdown to transform
         </span>
       </h2>
-      <textarea
-        className="markdown_textarea"
-        placeholder="Write here"
-        id="editor"
-        value={raw}
-        onChange={(e) => setRaw(e.currentTarget.value)}
-      ></textarea>
+      <section>
+        <textarea
+          className="markdown_textarea"
+          placeholder="Write here"
+          id="editor"
+          value={raw}
+          onChange={(e) => setRaw(e.currentTarget.value)}
+        ></textarea>
+      </section>
     </article>
   );
 }

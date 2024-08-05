@@ -1,4 +1,4 @@
-*:not(#preview *) {
+:where(:not(#preview *)) {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -36,15 +36,15 @@ article.previewer {
   overflow-y: scroll;
 }
 .splitter {
-  width: .7rem;
-  background-color:  #2bdea2;
+  width: 0.7rem;
+  background-color: #2bdea2;
   cursor: col-resize;
   display: flex;
   justify-content: center;
   align-items: center;
   user-select: none;
   font-size: 0.7rem;
-  &:active{
+  &:active {
     background-color: #49ae8d;
   }
 }
@@ -64,14 +64,23 @@ article.markdown {
   h2 {
     width: 100%;
   }
-  textarea {
+  section {
     width: 100%;
-    outline: none;
     min-height: calc(100% - 7rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  textarea {
+    border-radius: 1rem 0 0 1rem;
+    width: 90%;
+    outline: none;
+    min-height: 80%;
     resize: none;
     padding: 1rem;
     font-family: 'Courier New', Courier, monospace;
-    border: none;
+    border: 1px solid #0090de;
+    box-shadow: inset 2px -1px 5px #333a;
   }
 }
 article.previewer {
@@ -93,5 +102,8 @@ article.previewer {
   }
   img {
     max-width: 100%;
+  }
+  #preview{
+    padding-left: 3rem;
   }
 }
