@@ -13,7 +13,7 @@ function Previewer({ html, myref, refH2 }) {
       <section
         id="preview"
         className="previewer_article"
-        dangerouslySetInnerHTML={{ __html: html }}
+        dangerouslySetInnerHTML={{ __html: html || '<h3>There&apos;s nothing to show out</h3>' }}
       ></section>
     </article>
   );
