@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 let isResizing = false;
 
 // eslint-disable-next-line
-function Splitter({ markdownRef, previewerRef }) {
+function Splitter({ markdownRef, previewerRef, refH2 }) {
   const splitterRef = useRef(null);
 
   useEffect(() => {
@@ -20,6 +20,7 @@ function Splitter({ markdownRef, previewerRef }) {
         offsetRight + splitterRef.current.offsetWidth
       }px)`;
       previewerRef.current.style.flexBasis = `${offsetRight}px`;
+      refH2.current.style.width = `${offsetRight}px`;
     };
     splitterRef.current.addEventListener('mousedown', mouseDownFallback);
     document.addEventListener('mousemove', mouseMoveFallback);

@@ -36,7 +36,7 @@ article.previewer {
   overflow-y: scroll;
 }
 .splitter {
-  width: 0.7rem;
+  width: 1rem;
   background-color: #2bdea2;
   cursor: col-resize;
   display: flex;
@@ -44,6 +44,8 @@ article.previewer {
   align-items: center;
   user-select: none;
   font-size: 0.7rem;
+  letter-spacing: 2px;
+  box-shadow: 1px 0 2px #333;
   &:active {
     background-color: #49ae8d;
   }
@@ -72,18 +74,18 @@ article.markdown {
     align-items: center;
   }
   textarea {
-    border-radius: 1rem 0 0 1rem;
     width: 90%;
     outline: none;
-    min-height: 80%;
+    min-height: 90%;
     resize: none;
     padding: 1rem;
     font-family: 'Courier New', Courier, monospace;
     border: 1px solid #0090de;
-    box-shadow: inset 2px -1px 5px #333a;
+    box-shadow: 1px 2px 5px #333a;
   }
 }
 article.previewer {
+  scroll-timeline-name: --previewer;
   code {
     background-color: #fff;
   }
@@ -103,7 +105,26 @@ article.previewer {
   img {
     max-width: 100%;
   }
-  #preview{
+  #preview {
     padding-left: 3rem;
+  }
+  .previewer_h2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation-timeline: --previewer;
+    animation-name: shrink;
+    animation-range: 0 5rem;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    width: calc(50vw - 0.5rem);
+  }
+}
+@keyframes shrink {
+  to {
+    height: 1.3rem;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    background-color: #222;
   }
 }

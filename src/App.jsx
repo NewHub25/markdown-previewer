@@ -9,6 +9,7 @@ function App() {
   const [raw, setRaw] = useState(textLoaded.text);
   const markdownRef = useRef(null);
   const previewerRef = useRef(null);
+  const refH2 = useRef(null);
 
   marked.use({
     breaks: true,
@@ -18,8 +19,8 @@ function App() {
     <main className="app">
       <h1 hidden>markdown-previewer</h1>
       <Markdown myref={markdownRef} raw={raw} setRaw={setRaw} />
-      <Splitter markdownRef={markdownRef} previewerRef={previewerRef} />
-      <Previewer myref={previewerRef} html={marked(raw)} />
+      <Splitter markdownRef={markdownRef} previewerRef={previewerRef} refH2={refH2} />
+      <Previewer myref={previewerRef} refH2={refH2} html={marked(raw)} />
     </main>
   );
 }
