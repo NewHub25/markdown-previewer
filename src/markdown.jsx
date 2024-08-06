@@ -20,7 +20,7 @@ function Markdown({ raw, setRaw, myref }) {
       .catch((e) => console.log(e));
   };
   const handleReset = () => {
-    if (confirm('Are you sure you want to reset the MARKDOWN note')) setRaw('');
+    if (confirm('Are you sure you want to empty this markdown?')) setRaw('');
   };
   const handleSizePlus = () => {
     if (size > 30) return;
@@ -41,6 +41,7 @@ function Markdown({ raw, setRaw, myref }) {
       </h2>
       <section>
         <textarea
+          spellCheck={false}
           style={{ fontSize: size }}
           className="markdown_textarea"
           placeholder="Write here"
@@ -53,7 +54,7 @@ function Markdown({ raw, setRaw, myref }) {
             {!copied ? 'copy' : 'copied'}
           </button>
           <button className="button-19" onClick={handleReset}>
-            reset
+            empty
           </button>
           <button className="button-19" onClick={handleSizePlus}>
             A+

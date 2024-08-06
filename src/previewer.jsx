@@ -11,9 +11,11 @@ function Previewer({ html, myref, refH2 }) {
         </span>
       </h2>
       <section
+        contentEditable="true"
+        spellCheck={false}
         id="preview"
         className="previewer_article"
-        dangerouslySetInnerHTML={{ __html: html || '<h3>There&apos;s nothing to show out</h3>' }}
+        dangerouslySetInnerHTML={{ __html: html }}
       ></section>
     </article>
   );

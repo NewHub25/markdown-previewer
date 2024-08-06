@@ -21,6 +21,8 @@ function Splitter({ markdownRef, previewerRef, refH2 }) {
       }px)`;
       previewerRef.current.style.flexBasis = `${offsetRight}px`;
       refH2.current.style.width = `${offsetRight}px`;
+      previewerRef.current.className =
+        'previewer ' + (offsetRight < 400 ? 'small' : offsetRight > 1000 ? 'large' : '');
     };
     splitterRef.current.addEventListener('mousedown', mouseDownFallback);
     document.addEventListener('mousemove', mouseMoveFallback);

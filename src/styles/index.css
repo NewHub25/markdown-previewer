@@ -8,7 +8,7 @@ body {
   height: 100vh;
   height: 100dvh;
   overflow: hidden;
-  background-color: #eee;
+  background-color: #ddd;
 }
 .app {
   display: flex;
@@ -87,7 +87,7 @@ article.markdown {
     outline: none;
     height: 80%;
     resize: none;
-    padding: 1rem;
+    padding: 1rem 2rem;
     font-family: 'Courier New', Courier, monospace;
     border: 1px solid #0090de;
     box-shadow: 1px 2px 5px #333a;
@@ -95,7 +95,6 @@ article.markdown {
 }
 article.previewer {
   scroll-timeline-name: --previewer;
-  container: section-preview / inline-size;
   code {
     background-color: #fff;
   }
@@ -120,7 +119,7 @@ article.previewer {
     padding-top: 100px;
   }
   .previewer_h2 {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     animation-timeline: --previewer;
@@ -133,20 +132,20 @@ article.previewer {
 }
 @keyframes shrink {
   to {
-    height: 1.3rem;
+    height: 1.5rem;
     font-size: 0.9rem;
     letter-spacing: 3px;
     background-color: #222;
   }
 }
-@container section-preview (max-width: 400px) {
-  #preview {
-    font-size: 0.5rem;
-  }
+.previewer.small #preview {
+  padding-left: 1rem;
+  font-size: 0.5rem;
 }
-@container section-preview (min-width: 1000px) {
-  #preview {
-    padding-left: 5rem;
-    font-size: 2rem;
-  }
+.previewer.large #preview {
+  padding-left: 4rem;
+  font-size: 2rem;
+}
+.previewer_h2 svg {
+  cursor: pointer;
 }
