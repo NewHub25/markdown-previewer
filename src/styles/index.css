@@ -95,6 +95,12 @@ article.markdown {
 }
 article.previewer {
   scroll-timeline-name: --previewer;
+  li:has(> p > input[type='checkbox']:checked:disabled) {
+    list-style: none;
+  }
+  input[type='checkbox']:checked:disabled {
+    box-shadow: 1px 1px 3px #3338;
+  }
   code {
     background-color: #fff;
   }
