@@ -102,7 +102,14 @@ article.previewer {
     box-shadow: 1px 1px 3px #3338;
   }
   code {
+    line-height: 1.1rem;
+  }
+  pre:has(code),
+  code {
+    padding: 0.2rem;
+    color: #333;
     background-color: #fff;
+    border-radius: 5pt;
   }
   blockquote {
     border-left: 5px solid #555;
